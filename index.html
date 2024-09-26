@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanded Infinite Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Infinite Clicker</h1>
+        <p>Score: <span id="score">0</span></p>
+        <button id="clickButton">Click Me!</button>
+
+        <div class="upgrades">
+            <h2>Upgrades</h2>
+            <div class="upgrade">
+                <p>Auto Clicker (1 point/sec) - Cost: <span id="autoClickerCost">50</span></p>
+                <button id="buyAutoClicker">Buy Auto Clicker</button>
+            </div>
+            <div class="upgrade">
+                <p>Double Click Power - Cost: <span id="clickPowerCost">100</span></p>
+                <button id="buyClickPower">Buy Click Power</button>
+            </div>
+            <div class="upgrade">
+                <p>Auto Clicker Efficiency (+1 point/sec) - Cost: <span id="autoClickerEfficiencyCost">200</span></p>
+                <button id="buyAutoClickerEfficiency">Increase Efficiency</button>
+            </div>
+            <div class="upgrade">
+                <p>Reduce Upgrade Cost - Cost: <span id="reduceCostCost">500</span></p>
+                <button id="buyReduceCost">Reduce Costs</button>
+            </div>
+        </div>
+
+        <button id="prestigeButton" class="hidden">Prestige (Reset for x2 multiplier)!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
