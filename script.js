@@ -10,9 +10,11 @@ let reduceCostCost = 500;
 let prestigeMultiplier = 1;
 let upgradeDiscount = 1.0;
 let prestigeAvailable = false;
+let sps = 0; // Score per second
 
 // DOM Elements
 const scoreElement = document.getElementById('score');
+const spsElement = document.getElementById('sps'); // New SPS element
 const clickButton = document.getElementById('clickButton');
 const autoClickerCostElement = document.getElementById('autoClickerCost');
 const clickPowerCostElement = document.getElementById('clickPowerCost');
@@ -118,16 +120,23 @@ buyReduceCostButton.addEventListener('click', () => {
     }
 });
 
-// Function to update score display
+// Function to update score display and calculate SPS
 function updateScore() {
     scoreElement.textContent = score;
+    calculateSPS();
+    spsElement.textContent = sps; // Update SPS display
     checkPrestige();
+}
+
+// Calculate Score per Second (SPS)
+function calculateSPS() {
+    sps = autoClickerCount * autoClickerEfficiency * prestigeMultiplier;
 }
 
 // Auto clicker loop (points per second per auto clicker)
 setInterval(() => {
     if (autoClickerCount > 0) {
-        score += autoClickerCount * autoClickerEfficiency * prestigeMultiplier;
+        score += sps; // Add SPS to score
         updateScore();
         saveGame();
     }
